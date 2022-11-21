@@ -1,5 +1,4 @@
 #include "Draw.h"
-#include "Draw.cpp"
 
 #include <iostream>
 #include <vector>
