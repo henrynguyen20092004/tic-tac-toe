@@ -1,6 +1,6 @@
-#include "Draw.h"
-#include <iostream>
+#include <string>
 #include <vector>
+#include "Draw.h"
 
 using namespace std;
 
@@ -21,7 +21,8 @@ char FirstRowAndColumn(int x, int y)
     return ' ';
 }
 
-char ParseSmallBoard(vector<vector<char>> smallBoard, int x, int y, int size) {
+char ParseSmallBoard(vector<vector<char>> smallBoard, int x, int y, int size)
+{
     return x < size ? smallBoard[x / 2 - 1][y / 2 - 1] : ' ';
 }
 

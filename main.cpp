@@ -1,7 +1,6 @@
-#include "Draw.h"
-
 #include <iostream>
 #include <vector>
+#include "Draw.h"
 
 using namespace std;
 
@@ -24,7 +23,8 @@ int main()
         if (ans == 'Y' || ans == 'y')
         {
             running = true;
-            cout << "Enter the size of the board: "; cin >> size;
+            cout << "Enter the size of the board: ";
+            cin >> size;
 
             // TODO: Make a real board and loop the draw function
             /* **************************************************
