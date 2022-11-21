@@ -1,8 +1,19 @@
 #include <string>
 #include <vector>
+#include <iostream>
 #include "Draw.h"
 
 using namespace std;
+
+void coutVector(vector<vector<char>> smallBoard) {
+    for (auto i : smallBoard) {
+        for (auto j : i) {
+            cout << "'" << j << "', ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+}
 
 char FirstRowAndColumn(int x, int y)
 {
@@ -41,6 +52,8 @@ char GetCharFromCoor(vector<vector<char>> smallBoard, int x, int y, int size)
 
 string DrawBoard(vector<vector<char>> smallBoard, int size)
 {
+    coutVector(smallBoard);
+    size = size * 2 + 1;
     vector<vector<char>> board(size, vector<char>(size + 1));
     string boardString;
 
