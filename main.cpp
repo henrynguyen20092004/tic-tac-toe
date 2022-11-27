@@ -47,8 +47,13 @@ int main()
 void run(int &score1, int &score2)
 {
     int size, turn = 0;
-    cout << "Enter the size of the board: ";
-    cin >> size;
+    do
+    {
+        cout << "Enter the size of the board (5 - 26): ";
+        cin >> size;
+        if (size < 5 || size > 26)
+            cout << "Please try again!" << endl;
+    } while (size < 5 || size > 26);
     vector<char> filledRow(size, ' ');
     vector<vector<char>> board(size, filledRow);
     cout << DrawBoard(board, size) << endl;

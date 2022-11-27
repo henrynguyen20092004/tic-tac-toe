@@ -23,7 +23,7 @@ void ChoiceOfPlayer(vector<vector<char>> &board, int size, int turn)
         cin >> col;
 
         if (CharToInt(row) > size || CharToInt(col) > size || CharToInt(row) < 0 || CharToInt(col) < 0)
-            cout << "Out of bounds, please enter again.\n";
+            cout << "Out of bounds, please enter again!\n";
         else
         {
             if (board[(CharToInt(row))][(CharToInt(col))] == ' ')
@@ -33,7 +33,7 @@ void ChoiceOfPlayer(vector<vector<char>> &board, int size, int turn)
             }
             else
             {
-                cout << "That square is occupied, please enter again.\n";
+                cout << "That square is occupied, please enter again!\n";
                 occupied = true;
             }
         }
