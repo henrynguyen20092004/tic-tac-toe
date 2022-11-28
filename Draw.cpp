@@ -1,11 +1,12 @@
+#include "Draw.h"
+
+#include <iostream>
 #include <string>
 #include <vector>
-#include "Draw.h"
 
 using namespace std;
 
-char FirstRowAndColumn(int x, int y)
-{
+char FirstRowAndColumn(int x, int y) {
     if (x == 0)
         if (y % 2 == 1)
             return '|';
@@ -21,13 +22,11 @@ char FirstRowAndColumn(int x, int y)
     return ' ';
 }
 
-char ParseSmallBoard(vector<vector<char>> smallBoard, int x, int y, int size)
-{
+char ParseSmallBoard(vector<vector<char>> smallBoard, int x, int y, int size) {
     return x < size ? smallBoard[x / 2 - 1][y / 2 - 1] : ' ';
 }
 
-char GetCharFromCoor(vector<vector<char>> smallBoard, int x, int y, int size)
-{
+char GetCharFromCoor(vector<vector<char>> smallBoard, int x, int y, int size) {
     if (y == size)
         return '\n';
     else if (x == 0 || y == 0)
@@ -39,10 +38,10 @@ char GetCharFromCoor(vector<vector<char>> smallBoard, int x, int y, int size)
     return ParseSmallBoard(smallBoard, x, y, size);
 }
 
-string DrawBoard(vector<vector<char>> smallBoard, int size)
-{
+string DrawBoard(vector<vector<char>> smallBoard, int size) {
+    size = size * 2 + 1;
     vector<vector<char>> board(size, vector<char>(size + 1));
-    string boardString;
+    string boardString = "\n";
 
     for (int i = 0; i < size; i++)
         for (int j = 0; j <= size; j++)
