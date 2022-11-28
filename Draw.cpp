@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include <iostream>
 #include "Draw.h"
 
 using namespace std;
@@ -41,6 +42,7 @@ char GetCharFromCoor(vector<vector<char>> smallBoard, int x, int y, int size)
 
 string DrawBoard(vector<vector<char>> smallBoard, int size)
 {
+    size = size * 2 + 1;
     vector<vector<char>> board(size, vector<char>(size + 1));
     string boardString;
 
