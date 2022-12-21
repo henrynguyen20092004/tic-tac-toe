@@ -9,8 +9,7 @@ using namespace std;
 
 void run(int &score1, int &score2);
 
-int main()
-{
+int main() {
     int score1 = 0, score2 = 0;
     char ans;
     bool running;
@@ -18,22 +17,18 @@ int main()
     cout << "Do you want to start? (Y/N) ";
     cin >> ans;
 
-    do
-    {
-        while (ans != 'Y' && ans != 'y' && ans != 'N' && ans != 'n')
-        {
+    do {
+        while (ans != 'Y' && ans != 'y' && ans != 'N' && ans != 'n') {
             cout << "Please try again! ";
             cin >> ans;
         }
-        if (ans == 'Y' || ans == 'y')
-        {
+        if (ans == 'Y' || ans == 'y') {
             running = true;
             run(score1, score2);
             cout << "Do you want to play again? (Y/N) ";
             cin >> ans;
         }
-        if (ans == 'N' || ans == 'n')
-        {
+        if (ans == 'N' || ans == 'n') {
             cout << "Player 1 score: " << score1 << endl;
             cout << "Player 2 score: " << score2 << endl;
             cout << GetResult(score1, score2) << endl;
@@ -44,11 +39,9 @@ int main()
     return 0;
 }
 
-void run(int &score1, int &score2)
-{
+void run(int &score1, int &score2) {
     int size, turn = 0;
-    do
-    {
+    do {
         cout << "Enter the size of the board (5 - 26): ";
         cin >> size;
         if (size < 5 || size > 26)
@@ -57,8 +50,7 @@ void run(int &score1, int &score2)
     vector<char> filledRow(size, ' ');
     vector<vector<char>> board(size, filledRow);
     cout << DrawBoard(board, size) << endl;
-    do
-    {
+    do {
         turn++;
         ChoiceOfPlayer(board, size, turn);
         cout << DrawBoard(board, size) << endl;
