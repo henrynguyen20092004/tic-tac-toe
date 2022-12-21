@@ -6,19 +6,25 @@
 using namespace std;
 
 int CharToInt(char coor) {
-    return int(coor) - 97;
+    return coor - 'a';
 }
 
-void ChoiceOfPlayer(vector<vector<char>> &board, int size, int turn) {
+void inputChar(char& c) {
+    cin.get(c);
+    while (cin.get() != '\n') {
+    }
+}
+
+void ChoiceOfPlayer(vector<vector<char>>& board, int size, int turn) {
     char row, col;
     bool occupied = false;
     do {
         turn = turn % 2 == 1 ? 1 : 2;
         cout << "The turn of player: " << turn << '\n';
         cout << "Enter row: ";
-        cin >> row;
+        inputChar(row);
         cout << "Enter col: ";
-        cin >> col;
+        inputChar(col);
 
         if (CharToInt(row) > size || CharToInt(col) > size || CharToInt(row) < 0 || CharToInt(col) < 0)
             cout << "Out of bounds, please enter again!\n";

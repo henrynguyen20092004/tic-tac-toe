@@ -15,18 +15,18 @@ int main() {
     bool running;
     cout << "Welcome to the game tic-tac-toe." << endl;
     cout << "Do you want to start? (Y/N) ";
-    cin >> ans;
+    inputChar(ans);
 
     do {
         while (ans != 'Y' && ans != 'y' && ans != 'N' && ans != 'n') {
             cout << "Please try again! ";
-            cin >> ans;
+            inputChar(ans);
         }
         if (ans == 'Y' || ans == 'y') {
             running = true;
             run(score1, score2);
             cout << "Do you want to play again? (Y/N) ";
-            cin >> ans;
+            inputChar(ans);
         }
         if (ans == 'N' || ans == 'n') {
             cout << "Player 1 score: " << score1 << endl;
@@ -44,6 +44,8 @@ void run(int &score1, int &score2) {
     do {
         cout << "Enter the size of the board (5 - 26): ";
         cin >> size;
+        while (cin.get() != '\n') {
+        }
         if (size < 5 || size > 26)
             cout << "Please try again!" << endl;
     } while (size < 5 || size > 26);
